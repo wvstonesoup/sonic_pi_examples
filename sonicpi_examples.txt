@@ -1,0 +1,35 @@
+def wear (smell)
+  sample(:bass_drop_c, rate: smell)
+  sleep(2/smell)
+end
+
+def wash(temperature)
+  play(temperature)
+  sleep(1)
+end
+
+def dry(type)
+  sample(type)
+  sleep(1)
+end
+
+5.times do
+  wear(5)
+  stain = [true, false].choose
+  if stain == true
+    sample (:elec_twang)
+    sleep (1)
+  else
+    sample(:bd_fat)
+    sleep(1)
+  end
+  wash(60)
+  dry(:ambi_choir)
+end
+
+2.times do
+  wear(1)
+  wash(70)
+  dry(:ambi_piano)
+end
+
