@@ -1,0 +1,41 @@
+def list(length)
+  sample(:elec_triangle, rate: length)
+  sleep (1)
+end
+
+def shop
+  sample (:ambi_choir)
+  sleep (1)
+end
+
+def pay
+  play 70
+  sleep (1)
+end
+
+def stow
+  sample (:ambi_glass_rub)
+end
+
+3.times do
+  list(1)
+  shop()
+  coupon = [true, false].choose
+  if coupon == true
+    sample (:elec_twang)
+    sleep (1)
+  else
+    sample(:bd_fat)
+    sleep(1)
+  end
+  pay()
+  cash = [true, false].choose
+  if cash == true
+    sample (:ambi_lunar_land)
+    sleep (1)
+  else
+    play 80
+    sleep (1)
+  end
+  stow()
+end
